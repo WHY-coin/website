@@ -15,6 +15,7 @@
     "@nuxtjs/tailwindcss": "6.13.1",
     "nuxt": "^3.15.4",
     "vue": "latest",
-    "vue-router": "latest"
+    "vue-router": "latest",
+    "yandex-metrika-module-nuxt3": "^1.5.3"
   }
 }
