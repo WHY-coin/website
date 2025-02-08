@@ -2,6 +2,7 @@
   "name": "why-coin-website",
   "private": true,
   "type": "module",
+  "license": "MIT",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
