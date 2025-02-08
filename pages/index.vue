@@ -1,14 +1,19 @@
 <template>
   <div
-    class="w-full overflow-x-hidden flex flex-col items-center text-5xl"
+    class="w-full overflow-x-hidden flex flex-col items-center text-5xl px-0 lg:px-8"
   >
     <div class="w-full h-[64rem] relative flex items-center justify-center">
-      <div ref="logo" class="absolute text-9xl h-32 text">
+      <div ref="logo" class="pointer-events-none absolute text-4xl lg:text-6xl xl:text-9xl h-32 text">
         $WHY COIN
       </div>
     </div>
-    <div class="flex flex-col gap-2 rounded-t-3xl bg-neutral-950 w-full min-h-screen overflow-x-hidden z-50">
-
+    <div class="flex flex-col items-center p-6 gap-2 rounded-t-3xl bg-[#04060C80] backdrop-blur-sm border-[1px] border-white/15 w-full min-h-screen overflow-x-hidden z-50">
+      <h1 class="text-5xl">
+        $WHY COIN
+      </h1>
+      <span class="text-xl">
+        The best token ever
+      </span>
     </div>
   </div>
 </template>
@@ -61,7 +66,7 @@ onBeforeUnmount(() => {
 
 .text {
   display: inline-block;
-  background: linear-gradient(90deg, #ffffff, #9a9a9a);
+  background: linear-gradient(90deg, #ffffff, #dadada);
   background-size: 200% 100%;
   color: transparent;
   background-clip: text;
