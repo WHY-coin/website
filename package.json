@@ -16,6 +16,7 @@
     "axios": "^1.7.9",
     "lenis": "^1.1.20",
     "nuxt": "^3.15.4",
+    "nuxt-icons": "^3.2.1",
     "vue": "latest",
     "vue-router": "latest",
     "yandex-metrika-module-nuxt3": "^1.5.3"

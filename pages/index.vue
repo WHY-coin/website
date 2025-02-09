@@ -2,7 +2,7 @@
   <div
     class="w-full overflow-x-hidden flex flex-col items-center text-5xl px-0 lg:px-8"
   >
-    <div class="w-full h-[64rem] relative flex items-center justify-center">
+    <div class="w-full h-screen relative flex items-center justify-center">
       <div ref="logo" class="flex flex-col justify-center items-center absolute">
         <div class="text-4xl lg:text-6xl xl:text-9xl pointer-events-none text scale-150">
           $WHY COIN
@@ -24,6 +24,17 @@
       <span class="text-xl">
         The best token ever
       </span>
+
+      <hr class="text-white h-[1px] w-2/3">
+
+      <h2 class="text-4xl">
+        Socials
+      </h2>
+      <div class="flex gap-8">
+        <a href="https://t.me/sowhycoin" target="_blank">
+          <NuxtIcon name="socials/tg" class="text-purple-600 hover:text-purple-500 active:text-purple-400 transition-all duration-300" />
+        </a>
+      </div>
     </div>
   </div>
 </template>

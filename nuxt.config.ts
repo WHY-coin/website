@@ -4,6 +4,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
     '@nuxtjs/tailwindcss',
+    'nuxt-icons',
     [
       'yandex-metrika-module-nuxt3',
       {

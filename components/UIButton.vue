@@ -7,7 +7,7 @@
       'text-base lg:text-lg xl:text-xl': size === 'normal',
       'text-lg lg:text-xl xl:text-2xl': size === 'big',
     }"
-    class="transition-all duration-200 rounded-xl px-6 py-2 font-semibold"
+    class="transition-all duration-300 rounded-xl px-6 py-2 font-semibold"
   >
     <slot />
   </button>
