@@ -10,6 +10,8 @@
 import Lenis from 'lenis'
 import 'lenis/dist/lenis.css'
 
+const { locale, t } = useI18n()
+
 onMounted(() => {
   const lenis = new Lenis({
     autoRaf: true,
@@ -18,7 +20,7 @@ onMounted(() => {
 
 useHead({
   htmlAttrs: {
-    lang: 'en'
+    lang: locale
   },
   link: [
     { rel: 'icon', type: 'image/x-jpg', href: '/icon.jpg' },
@@ -34,8 +36,8 @@ useHead({
 useSeoMeta({
   title: '$WHY coin',
   ogTitle: '$WHY coin',
-  description: '$WHY coin official website',
-  ogDescription: '$WHY coin official website',
+  description: t('appDesc'),
+  ogDescription: t('appDesc'),
   ogImage: '/why.jpg',
   twitterCard: 'summary_large_image'
 })

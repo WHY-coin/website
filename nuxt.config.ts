@@ -8,6 +8,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     'nuxt-icons',
+    '@nuxtjs/i18n',
     [
       'yandex-metrika-module-nuxt3',
       {
@@ -35,5 +36,13 @@ export default defineNuxtConfig({
         }
       },
     }
+  },
+  i18n: {
+    vueI18n: './i18n.config.ts',
+    locales: [
+      { code: 'en', language: 'en-US' },
+      { code: 'ru', language: 'ru-RU' }
+    ],
+    defaultLocale: 'en',
   }
 })

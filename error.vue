@@ -6,11 +6,11 @@
         {{ error?.statusCode }}
       </h1>
       <span class="absolute translate-y-16 lg:translate-y-20 xl:translate-y-28 text-xl lg:text-2xl xl:text-3xl">
-        Why are you here? Buy $WHY instead!
+        {{ $t('err404') }}
       </span>
       <NuxtLink class="absolute translate-y-32 lg:translate-y-36 xl:translate-y-44" to="/">
         <UIButton>
-          Back to home
+          {{ $t('err404BackToHome') }}
         </UIButton>
       </NuxtLink>
     </div>
@@ -23,15 +23,21 @@ import type { NuxtError } from '#app'
 import Lenis from 'lenis'
 import 'lenis/dist/lenis.css'
 
+
+const { locale, t } = useI18n()
+
+
 const props = defineProps({
   error: Object as () => NuxtError
 })
+
 
 onMounted(() => {
   const lenis = new Lenis({
     autoRaf: true,
   });
 })
+
 
 useHead({
   htmlAttrs: {
@@ -48,11 +54,12 @@ useHead({
   ]
 })
 
+
 useSeoMeta({
-  title: '404 not found',
-  ogTitle: '404 not found',
-  description: 'Why are you here? Buy $WHY instead!',
-  ogDescription: 'Why are you here? Buy $WHY instead!',
+  title: t('err404Title'),
+  ogTitle: t('err404Title'),
+  description: t('err404'),
+  ogDescription: t('err404'),
   ogImage: '/why.jpg',
   twitterCard: 'summary_large_image'
 })

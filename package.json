@@ -12,6 +12,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxtjs/i18n": "^9.2.0",
     "@nuxtjs/tailwindcss": "6.13.1",
     "axios": "^1.7.9",
     "lenis": "^1.1.20",
