@@ -25,6 +25,9 @@ useHead({
     { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
     { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: "" },
     { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200..800;1,200..800&display=swap' },
+  ],
+  meta: [
+    { name: 'google-site-verification', content: 'google-site-verification=dmrePOvPNCn7YNqHGEZoBkUUFYVS20tCT1kjkBrHck0' },
   ]
 })
 
