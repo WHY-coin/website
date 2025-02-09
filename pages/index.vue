@@ -3,7 +3,7 @@
     class="w-full overflow-x-hidden flex flex-col items-center text-5xl px-0 lg:px-8"
   >
     <div class="w-full h-[64rem] relative flex items-center justify-center">
-      <div ref="logo" class="flex flex-col justify-center items-center absolute">
+      <div ref="logo" class="flex flex-col justify-center items-center absolute transition-all duration-75">
         <div class="text-4xl lg:text-6xl xl:text-9xl pointer-events-none text">
           $WHY COIN
         </div>
@@ -60,12 +60,12 @@ definePageMeta({
 
 onMounted(() => {
   window.addEventListener('scroll', logoHandler);
-  // setInterval(logoHandler, 5);
+  setInterval(logoHandler, 5);
 })
 
 onBeforeUnmount(() => {
   window.removeEventListener('scroll', logoHandler);
-  // clearInterval(logoHandler);
+  clearInterval(interval);
 })
 
 </script>
