@@ -32,10 +32,10 @@
       </h2>
       <div class="flex gap-4">
         <a href="https://t.me/sowhycoin" target="_blank" title="Telegram">
-          <NuxtIcon name="socials/tg" class="text-purple-600 hover:text-purple-500 active:text-purple-400 transition-all duration-300" />
+          <NuxtIcon name="socials/tg" class="text-purple-500 hover:text-purple-400 active:text-purple-300 transition-all duration-300" />
         </a>
         <a href="https://twitblit.ru/tb/sowhycoin" target="_blank" title="Twitblit">
-          <NuxtIcon name="socials/twitblit" class="text-purple-600 hover:text-purple-500 active:text-purple-400 transition-all duration-300" />
+          <NuxtIcon name="socials/twitblit" class="text-purple-500 hover:text-purple-400 active:text-purple-300 transition-all duration-300" />
         </a>
       </div>
     </div>

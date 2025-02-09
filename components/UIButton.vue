@@ -1,8 +1,8 @@
 <template>
   <button
     :class="{
-      'bg-purple-600 hover:bg-purple-500 active:bg-purple-400 text-[#04060C]': color === 'purple',
-      'bg-green-600 hover:bg-green-500 active:bg-green-400 text-[#04060C]': color === 'green',
+      'bg-purple-700 hover:bg-purple-600 active:bg-purple-500 text-white': color === 'purple',
+      'bg-green-700 hover:bg-green-600 active:bg-green-500 text-white': color === 'green',
       'text-sm lg:text-base xl:text-lg': size === 'small',
       'text-base lg:text-lg xl:text-xl': size === 'normal',
       'text-lg lg:text-xl xl:text-2xl': size === 'big',

@@ -17,6 +17,9 @@ onMounted(() => {
 })
 
 useHead({
+  htmlAttrs: {
+    lang: 'en'
+  },
   link: [
     { rel: 'icon', type: 'image/x-jpg', href: '/icon.jpg' },
     { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
