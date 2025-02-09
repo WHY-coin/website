@@ -7,6 +7,7 @@
       <img
         class="w-18 h-16 object-cover object-center"
         src="/icon.jpg"
+        alt="$WHY coin icon"
       >
       <div class="flex gap-4 items-center">
         <UIDropdown
