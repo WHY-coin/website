@@ -1,14 +1,31 @@
 <template>
-  <div>
-    <NuxtLayout>
-      <NuxtPage />
-    </NuxtLayout>
+  <div class="w-full min-h-screen overflow-x-hidden bg-[#07080F] text-white">
+    <BackgroundGrid />
+    <div class="fixed flex flex-col items-center justify-center z-10 w-screen h-screen">
+      <h1 class="text-5xl lg:text-7xl xl:text-9xl scale-150">
+        {{ error?.statusCode }}
+      </h1>
+      <span class="absolute translate-y-16 lg:translate-y-20 xl:translate-y-28 text-xl lg:text-2xl xl:text-3xl">
+        Why are you here? Buy $WHY instead!
+      </span>
+      <NuxtLink class="absolute translate-y-32 lg:translate-y-36 xl:translate-y-44" to="/">
+        <UIButton>
+          Back to home
+        </UIButton>
+      </NuxtLink>
+    </div>
   </div>
 </template>
 
+
 <script setup lang="ts">
+import type { NuxtError } from '#app'
 import Lenis from 'lenis'
 import 'lenis/dist/lenis.css'
+
+const props = defineProps({
+  error: Object as () => NuxtError
+})
 
 onMounted(() => {
   const lenis = new Lenis({
@@ -32,14 +49,13 @@ useHead({
 })
 
 useSeoMeta({
-  title: '$WHY coin',
-  ogTitle: '$WHY coin',
-  description: '$WHY coin official website',
-  ogDescription: '$WHY coin official website',
+  title: '404 not found',
+  ogTitle: '404 not found',
+  description: 'Why are you here? Buy $WHY instead!',
+  ogDescription: 'Why are you here? Buy $WHY instead!',
   ogImage: '/why.jpg',
   twitterCard: 'summary_large_image'
 })
-
 </script>
 
 <style>
