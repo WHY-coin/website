@@ -3,10 +3,15 @@
     class="w-full overflow-x-hidden flex flex-col items-center text-5xl px-0 lg:px-8"
   >
     <div class="w-full h-[64rem] relative flex items-center justify-center">
-      <div ref="logo" class="flex flex-col justify-center items-center pointer-events-none absolute h-32">
-        <div class="text-4xl lg:text-6xl xl:text-9xl text">
+      <div ref="logo" class="flex flex-col justify-center items-center absolute">
+        <div class="text-4xl lg:text-6xl xl:text-9xl pointer-events-none text">
           $WHY COIN
         </div>
+        <a class="absolute translate-y-72 lg:translate-y-16 xl:translate-y-32" target="_blank" href="https://t.me/blum/app?startapp=memepadjetton_WHY_FHLAY-ref_N6jhKl4WlB">
+          <UIButton>
+            buy $WHY
+          </UIButton>
+        </a>
         <!-- <span class="text-lg lg:text-xl font-light">
           actual course <span class="font-semibold">${{ actualCourse.toFixed(2) }}</span>
         </span> -->
@@ -77,11 +82,11 @@ onBeforeUnmount(() => {
 }
 
 .text {
-  background: linear-gradient(45deg, #7700ff, #ffffff, #ffffff, #ffffff, #7700ff);
+  background: linear-gradient(45deg, #a250ff, #ffffff, #ffffff, #ffffff, #a250ff);
   background-size: 200% 100%;
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
-  animation: gradientAnimation 5s linear infinite;
+  animation: gradientAnimation 10s linear infinite;
 }
 </style>
