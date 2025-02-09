@@ -24,4 +24,5 @@ jobs:
           sleep 1
           sshpass -p ${{ secrets.MACHINE_PASSWORD }} ssh -o StrictHostKeyChecking=no ${{ secrets.MACHINE_USER }}@${{ secrets.MACHINE_HOST }} "git clone https://github.com/WHY-coin/website"
           sleep 1
+          sshpass -p ${{ secrets.MACHINE_PASSWORD }} ssh -o StrictHostKeyChecking=no ${{ secrets.MACHINE_USER }}@${{ secrets.MACHINE_HOST }} "cd website && echo \"HOST=127.0.0.1\" > .env"
           sshpass -p ${{ secrets.MACHINE_PASSWORD }} ssh -o StrictHostKeyChecking=no ${{ secrets.MACHINE_USER }}@${{ secrets.MACHINE_HOST }} "systemctl restart why_website"
