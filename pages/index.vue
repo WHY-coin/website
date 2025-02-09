@@ -3,8 +3,8 @@
     class="w-full overflow-x-hidden flex flex-col items-center text-5xl px-0 lg:px-8"
   >
     <div class="w-full h-[64rem] relative flex items-center justify-center">
-      <div ref="logo" class="flex flex-col justify-center items-center absolute transition-all duration-75">
-        <div class="text-4xl lg:text-6xl xl:text-9xl pointer-events-none text">
+      <div ref="logo" class="flex flex-col justify-center items-center absolute">
+        <div class="text-4xl lg:text-6xl xl:text-9xl pointer-events-none text scale-150">
           $WHY COIN
         </div>
         <a class="absolute translate-y-72 lg:translate-y-16 xl:translate-y-32" target="_blank" href="https://t.me/blum/app?startapp=memepadjetton_WHY_FHLAY-ref_N6jhKl4WlB">
@@ -51,7 +51,7 @@ function logoHandler() {
   logo.value.style.opacity = `${1.0 - offset * 0.001}`;
 }
 
-const interval = undefined;
+// const interval = undefined;
 
 
 definePageMeta({
@@ -60,12 +60,12 @@ definePageMeta({
 
 onMounted(() => {
   window.addEventListener('scroll', logoHandler);
-  setInterval(logoHandler, 5);
+  // setInterval(logoHandler, 5);
 })
 
 onBeforeUnmount(() => {
   window.removeEventListener('scroll', logoHandler);
-  clearInterval(interval);
+  // clearInterval(interval);
 })
 
 </script>

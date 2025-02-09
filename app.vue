@@ -7,6 +7,14 @@
 </template>
 
 <script setup lang="ts">
+import Lenis from 'lenis';
+import 'lenis/dist/lenis.css'
+
+onMounted(() => {
+  const lenis = new Lenis({
+    autoRaf: true,
+  });
+})
 
 useHead({
   link: [
@@ -29,10 +37,16 @@ useSeoMeta({
 </script>
 
 <style>
+
+
 * {
   font-family: "Montserrat", serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+}
+
+* {
+  scroll-behavior: smooth;
 }
 </style>
