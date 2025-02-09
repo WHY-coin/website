@@ -22,6 +22,6 @@ jobs:
         run: |
           sshpass -p ${{ secrets.MACHINE_PASSWORD }} ssh -o StrictHostKeyChecking=no ${{ secrets.MACHINE_USER }}@${{ secrets.MACHINE_HOST }} "cd /root/ && rm -rf website"
           sleep 1
-          sshpass -p ${{ secrets.MACHINE_PASSWORD }} ssh -o StrictHostKeyChecking=no ${{ secrets.MACHINE_USER }}@${{ secrets.MACHINE_HOST }} "cd /root/website && git pull"
+          sshpass -p ${{ secrets.MACHINE_PASSWORD }} ssh -o StrictHostKeyChecking=no ${{ secrets.MACHINE_USER }}@${{ secrets.MACHINE_HOST }} "git clone https://github.com/WHY-coin/website"
           sleep 1
           sshpass -p ${{ secrets.MACHINE_PASSWORD }} ssh -o StrictHostKeyChecking=no ${{ secrets.MACHINE_USER }}@${{ secrets.MACHINE_HOST }} "systemctl restart why_website"
