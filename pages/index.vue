@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-full overflow-x-hidden flex flex-col items-center text-5xl px-0 lg:px-8"
+    class="w-full overflow-x-hidden flex flex-col items-center px-0 lg:px-8"
   >
     <!-- header -->
     <div class="absolute z-50 flex gap-4 w-3/4 justify-between">
@@ -50,7 +50,7 @@
       <h2 class="text-4xl">
         {{ $t('socials') }}
       </h2>
-      <div class="flex gap-4">
+      <div class="flex gap-4 text-5xl">
         <a href="https://t.me/sowhycoin" target="_blank" title="Telegram">
           <NuxtIcon name="socials/tg" class="text-purple-500 hover:text-purple-400 active:text-purple-300 transition-all duration-300" />
         </a>
