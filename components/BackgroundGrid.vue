@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed w-screen h-screen">
+  <div class="fixed w-screen h-screen hidden md:flex">
     <canvas ref="backgroundGrid"></canvas>
   </div>
 </template>
@@ -34,11 +34,7 @@ const fragmentShaderSource = `
     float dist = distance(normalizedMouse, vec2(v_position.x * aspectRatio, v_position.y * -1.0)) * 2.0;
     gl_FragColor = u_color;
 
-    if (!use_dist) {
-      gl_FragColor = vec4(vec3(u_color), 0.1);
-    } else {
-      gl_FragColor.a = 1.0 - clamp(pow(dist, 0.25), 0.0, 1.0);
-    }
+    gl_FragColor.a = 1.0 - clamp(pow(dist, 0.25), 0.0, 1.0);
   }
 `;
 const gridLines = [];
@@ -55,6 +51,9 @@ function updateMousePosition(e) {
 
 
 onMounted(() => {
+  if (window.innerWidth < 768) {
+    return;
+  }
   const gl = backgroundGrid.value.getContext('webgl', { premultipliedAlpha: false })
   backgroundGrid.value.width = window.innerWidth;
   backgroundGrid.value.height = window.innerHeight;
@@ -67,7 +66,6 @@ onMounted(() => {
   const positionLocation = gl.getAttribLocation(program, "a_position");
   const colorLocation = gl.getUniformLocation(program, "u_color");
   const mouseLocation = gl.getUniformLocation(program, "mouse_position");
-  const useDistLocation = gl.getUniformLocation(program, "use_dist");
   const resolutionLocation = gl.getUniformLocation(program, "u_resolution");
 
   gl.useProgram(program);
@@ -123,7 +121,6 @@ onMounted(() => {
     const mouseNormalizedX = mouseX / window.innerWidth;
     const mouseNormalizedY = mouseY / window.innerHeight;
     gl.uniform2f(mouseLocation, mouseNormalizedX, mouseNormalizedY);
-    gl.uniform1i(useDistLocation, Number(window.innerWidth >= 720));
     gl.uniform2f(resolutionLocation, window.innerWidth, window.innerHeight);
 
     gl.clearColor(0, 0, 0, 0);
