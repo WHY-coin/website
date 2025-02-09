@@ -93,7 +93,7 @@ onBeforeUnmount(() => {
 }
 
 .text {
-  background: linear-gradient(45deg, #a250ff, #ffffff, #ffffff, #ffffff, #a250ff);
+  background: linear-gradient(90deg, #a250ff, #ffffff, #a250ff);
   background-size: 200% 100%;
   color: transparent;
   background-clip: text;
