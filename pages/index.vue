@@ -7,7 +7,7 @@
         <div class="text-4xl lg:text-6xl xl:text-9xl pointer-events-none text scale-150">
           $WHY COIN
         </div>
-        <a class="absolute translate-y-72 lg:translate-y-16 xl:translate-y-32" target="_blank" href="https://t.me/blum/app?startapp=memepadjetton_WHY_FHLAY-ref_N6jhKl4WlB">
+        <a class="absolute translate-y-52 lg:translate-y-16 xl:translate-y-32" target="_blank" href="https://t.me/blum/app?startapp=memepadjetton_WHY_FHLAY-ref_N6jhKl4WlB">
           <UIButton>
             buy $WHY
           </UIButton>
