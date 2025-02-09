@@ -1,6 +1,6 @@
 <template>
-  <div class="fixed w-screen h-screen hidden md:flex">
-    <canvas ref="backgroundGrid"></canvas>
+  <div class="fixed w-screen h-screen">
+    <canvas ref="backgroundGrid" class="hidden md:flex"></canvas>
   </div>
 </template>
 
@@ -22,7 +22,6 @@ const fragmentShaderSource = `
   uniform vec4 u_color;
   uniform vec2 u_resolution;
   uniform vec2 mouse_position;
-  uniform bool use_dist;
   varying vec2 v_position;
   void main() {
     vec2 normPosition = (v_position + 1.0) / 2.0;
@@ -51,9 +50,6 @@ function updateMousePosition(e) {
 
 
 onMounted(() => {
-  if (window.innerWidth < 768) {
-    return;
-  }
   const gl = backgroundGrid.value.getContext('webgl', { premultipliedAlpha: false })
   backgroundGrid.value.width = window.innerWidth;
   backgroundGrid.value.height = window.innerHeight;
@@ -66,6 +62,7 @@ onMounted(() => {
   const positionLocation = gl.getAttribLocation(program, "a_position");
   const colorLocation = gl.getUniformLocation(program, "u_color");
   const mouseLocation = gl.getUniformLocation(program, "mouse_position");
+  const useDistLocation = gl.getUniformLocation(program, "use_dist");
   const resolutionLocation = gl.getUniformLocation(program, "u_resolution");
 
   gl.useProgram(program);
@@ -126,6 +123,10 @@ onMounted(() => {
     gl.clearColor(0, 0, 0, 0);
     gl.clear(gl.COLOR_BUFFER_BIT);
     gl.drawArrays(gl.LINES, 0, gridLines.length / 2);
+  }
+
+  if (window.innerWidth < 768) {
+    return;
   }
 
   // Отслеживание движения мыши
