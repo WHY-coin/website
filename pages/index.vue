@@ -4,7 +4,7 @@
   >
     <div class="w-full h-screen relative flex items-center justify-center">
       <div ref="logo" class="flex flex-col justify-center items-center absolute">
-        <div class="text-4xl lg:text-6xl xl:text-9xl pointer-events-none text scale-150">
+        <div class="text-4xl lg:text-6xl xl:text-9xl pointer-events-none scale-150">
           $WHY COIN
         </div>
         <a class="absolute translate-y-52 lg:translate-y-16 xl:translate-y-32" target="_blank" href="https://t.me/blum/app?startapp=memepadjetton_WHY_FHLAY-ref_N6jhKl4WlB">
@@ -83,24 +83,3 @@ onBeforeUnmount(() => {
 })
 
 </script>
-
-
-<style scoped>
-@keyframes gradientAnimation {
-  0% {
-    background-position: 400% 0;
-  }
-  100% {
-    background-position: 0% 0;
-  }
-}
-
-.text {
-  background: linear-gradient(90deg, #a250ff, #ffffff, #a250ff);
-  background-size: 200% 100%;
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
-  animation: gradientAnimation 10s linear infinite;
-}
-</style>
