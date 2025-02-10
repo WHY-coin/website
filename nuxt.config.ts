@@ -20,11 +20,10 @@ export default defineNuxtConfig({
   ],
   tailwindcss: {
     exposeConfig: true,
-    viewer: true,
-    // and more...
   },
   ssr: true,
   nitro: {
+    compressPublicAssets: true,
     routeRules: {
       "/img/**": {
         headers: {

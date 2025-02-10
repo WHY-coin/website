@@ -4,9 +4,9 @@
   "type": "module",
   "license": "MIT",
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "start": "nuxt start --host 127.0.0.1",
+    "build": "nuxt build --modern=server",
+    "dev": "nuxt dev --modern=server",
+    "start": "nuxt start --host 127.0.0.1 --modern=server",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"

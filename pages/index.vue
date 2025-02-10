@@ -69,8 +69,6 @@
 
 
 <script lang="ts" setup>
-import { UIButton } from '#components';
-
 const { setLocale, locale } = useI18n()
 
 const logo = ref<HTMLElement | null>(null);
