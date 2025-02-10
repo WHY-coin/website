@@ -4,11 +4,15 @@
   >
     <!-- header -->
     <div class="absolute z-50 flex gap-4 w-3/4 justify-between">
-      <img
-        class="w-18 h-16 object-cover object-center"
-        src="/icon.jpg"
+      <NuxtImg
+        :placeholder="[64, 64, 75, 2]"
+        width="64"
+        height="64"
+        quality="25"
+        loading="lazy"
+        src="/icon.webp"
         alt="$WHY coin icon"
-      >
+      />
       <div class="flex gap-4 items-center">
         <UIDropdown
           :values="[{title: 'Eng', value: 'en'}, {title: 'Рус', value: 'ru'}]"
