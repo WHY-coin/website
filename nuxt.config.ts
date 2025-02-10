@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
 const year = 60 * 60 * 24 * 365;
+const hour = 60 * 60;
 
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
@@ -27,12 +28,12 @@ export default defineNuxtConfig({
     routeRules: {
       "/img/**": {
         headers: {
-          'cache-control': `public,max-age=${year},s-maxage=${year}`,
+          'cache-control': `public,max-age=${hour},s-maxage=${hour}`,
         }
       },
       "/_nuxt/**": {
         headers: {
-          'cache-control': `public,max-age=${year},s-maxage=${year}`,
+          'cache-control': `public,max-age=${hour},s-maxage=${hour}`,
         }
       },
     }

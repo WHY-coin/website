@@ -59,6 +59,9 @@
         <a href="https://t.me/sowhycoin" target="_blank" title="Telegram">
           <NuxtIcon name="socials/tg" class="text-purple-500 hover:text-purple-400 active:text-purple-300 transition-all duration-300" />
         </a>
+        <a href="https://x.com/sowhycoin" target="_blank" title="X">
+          <NuxtIcon name="socials/x" class="text-purple-500 hover:text-purple-400 active:text-purple-300 transition-all duration-300" />
+        </a>
         <a href="https://twitblit.ru/tb/sowhycoin" target="_blank" title="Twitblit">
           <NuxtIcon name="socials/twitblit" class="text-purple-500 hover:text-purple-400 active:text-purple-300 transition-all duration-300" />
         </a>
