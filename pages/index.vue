@@ -26,18 +26,20 @@
 
     <!-- logo -->
     <div class="w-full h-screen relative flex items-center justify-center">
-      <div ref="logo" class="flex flex-col justify-center items-center absolute">
-        <div class="text-4xl lg:text-6xl xl:text-9xl pointer-events-none scale-150">
+      <div ref="logo" class="w-full flex flex-col justify-center items-center absolute">
+        <div class="text-4xl lg:text-7xl xl:text-9xl pointer-events-none scale-150">
           $WHY COIN
         </div>
-        <a class="absolute translate-y-52 lg:translate-y-16 xl:translate-y-32" target="_blank" href="https://t.me/blum/app?startapp=memepadjetton_WHY_FHLAY-ref_N6jhKl4WlB">
+        <span
+          class="opacity-70 text-center absolute translate-y-16 lg:translate-y-16 xl:translate-y-24 text-base lg:text-lg font-light"
+        >
+          {{ $t(`why${Math.floor(Math.random() * (3 - 1 + 1))}`) }}
+        </span>
+        <a class="absolute translate-y-32 lg:translate-y-28 xl:translate-y-36" target="_blank" href="https://t.me/blum/app?startapp=memepadjetton_WHY_FHLAY-ref_N6jhKl4WlB">
           <UIButton>
             {{ $t("buyWhy") }}
           </UIButton>
         </a>
-        <!-- <span class="text-lg lg:text-xl font-light">
-          actual course <span class="font-semibold">${{ actualCourse.toFixed(2) }}</span>
-        </span> -->
       </div>
     </div>
 
@@ -60,13 +62,14 @@
         <UICard :title="$t('goal1Title')" border-color="yellow" :date="$t('notSoon')">
           {{ $t('goal1Desc') }}
         </UICard>
-        <UICard :title="$t('goal2Title')" border-color="green" date="08.02.2025">
-          <a href="https://t.me/blum/app?startapp=memepadjetton_WHY_FHLAY-ref_N6jhKl4WlB" target="_blank" class="underline">
-            {{ $t('goal2Desc') }}
-          </a>
+        <UICard :title="$t('goal4Title')" border-color="yellow" :date="$t('notSoon')">
+          {{ $t('goal4Desc') }}
         </UICard>
-        <UICard :title="$t('goal3Title')" border-color="green" date="10.02.2025">
+        <UICard :title="$t('goal3Title')" border-color="yellow" :date="$t('notSoon')">
           {{ $t('goal3Desc') }}
+        </UICard>
+        <UICard :title="$t('goal2Title')" border-color="yellow" :date="$t('notSoon')">
+          {{ $t('goal2Desc') }}
         </UICard>
       </div>
       
