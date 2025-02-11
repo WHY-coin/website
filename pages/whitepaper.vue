@@ -37,4 +37,8 @@
 
 const route = useRoute()
 
+definePageMeta({
+  'title': '$WHY TOP SECRET'
+})
+
 </script>
