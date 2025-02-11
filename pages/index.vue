@@ -59,7 +59,7 @@
       </h2>
 
       <div class="grid grid-cols-2 gap-4 py-2 w-2/3">
-        <UICard :title="$t('goal1Title')" border-color="yellow" :date="$t('notSoon')">
+        <UICard :title="$t('goal1Title')" border-color="green" date="11.02.2025">
           {{ $t('goal1Desc') }}
         </UICard>
         <UICard :title="$t('goal4Title')" border-color="yellow" :date="$t('notSoon')">
