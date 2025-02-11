@@ -74,6 +74,6 @@ h3 {
 }
 
 hr {
-  @apply text-white opacity-25 h-[1px] w-2/3 my-6;
+  @apply text-white opacity-25 h-[1px] w-11/12 md:w-5/6 lg:w-3/4 xl:w-2/3 my-6;
 }
 </style>

@@ -58,7 +58,7 @@
         {{ $t('goals') }}
       </h2>
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 py-2 w-5/6 lg:w-2/3">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 py-2 w-11/12 md:w-5/6 lg:w-4/5 xl:w-2/3">
         <UICard :title="$t('goal1Title')" border-color="green" date="11.02.2025">
           {{ $t('goal1Desc') }}
         </UICard>
