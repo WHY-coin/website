@@ -10,6 +10,7 @@
         height="64"
         quality="25"
         loading="lazy"
+        decoding="async"
         src="/icon.webp"
         alt="$WHY coin icon"
       />

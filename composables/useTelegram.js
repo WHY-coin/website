@@ -1,0 +1,26 @@
+import { onMounted, ref } from "vue";
+
+export const useTelegram = (onLoaded) => {
+  
+  const loaded = ref(false);
+  const tg = ref(undefined);
+
+  useHead({
+    script: [
+      { src: 'https://telegram.org/js/telegram-web-app.js?56' }
+    ]
+  });
+
+  onMounted(() => {
+    if (window.Telegram.WebApp) {
+      tg.value = window.Telegram.WebApp;
+      tg.value.setBottomBarColor('#04060C');
+      tg.value.setBackgroundColor('#04060C');
+      tg.value.setHeaderColor('#04060C');
+      loaded.value = true;
+      onLoaded(tg);
+    }
+  });
+
+  return { tg, loaded };
+}

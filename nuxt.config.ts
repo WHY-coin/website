@@ -11,6 +11,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     'nuxt-icons',
     '@nuxtjs/i18n',
+    '@vesp/nuxt-fontawesome',
     [
       'yandex-metrika-module-nuxt3',
       {
@@ -45,5 +46,10 @@ export default defineNuxtConfig({
       { code: 'ru', language: 'ru-RU' }
     ],
     defaultLocale: 'en',
+  },
+  fontawesome: {
+    icons: {
+      solid: ['house']
+    }
   }
 })
