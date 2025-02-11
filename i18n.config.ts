@@ -26,6 +26,7 @@ export default defineI18nConfig(() => ({
       why1: 'In a world where cryptocurrency is a religion, we just laugh and pray for growth.',
       why2: 'This coin has no meaning. It is created from emptiness, and that is why it is infinitely valuable.',
       whitepaperError: 'It\'s too secret. Perhaps even for ourselves.',
+      whitepaperError1: 'Haha, did you think it was that simple?',
     },
     ru: {
       bestTokenEver: 'Лучший токен на свете',
@@ -51,6 +52,7 @@ export default defineI18nConfig(() => ({
       why1: 'В мире, где криптовалюта — это религия, мы просто смеемся и молимся на рост.',
       why2: 'Эта монета не имеет смысла. Она создана из пустоты, и именно поэтому она бесконечно ценна.',
       whitepaperError: 'Слишком секретно. Возможно, даже для нас самих.',
+      whitepaperError1: 'Ха-ха, думал все так просто?',
     }
   }
 }))
