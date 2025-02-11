@@ -45,6 +45,10 @@ useSeoMeta({
 </script>
 
 <style>
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
 * {
   font-family: "Montserrat", serif;
   font-optical-sizing: auto;
@@ -55,5 +59,21 @@ useSeoMeta({
 
 * {
   scroll-behavior: smooth;
+}
+
+h1 {
+  @apply text-3xl lg:text-4xl xl:text-5xl;
+}
+
+h2 {
+  @apply text-2xl lg:text-3xl xl:text-4xl;
+}
+
+h3 {
+  @apply text-xl lg:text-2xl xl:text-3xl;
+}
+
+hr {
+  @apply text-white opacity-25 h-[1px] w-2/3 my-6;
 }
 </style>

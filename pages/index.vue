@@ -43,18 +43,39 @@
 
     <!-- main content -->
     <div class="flex flex-col items-center p-6 gap-2 rounded-t-3xl bg-[#04060C80] backdrop-blur-sm border-[1px] border-white/15 w-full min-h-screen overflow-x-hidden z-40">
-      <h1 class="text-5xl">
+      <h1>
         $WHY COIN
       </h1>
       <span class="text-xl">
         {{ $t('bestTokenEver') }}
       </span>
 
-      <hr class="text-white h-[1px] w-2/3">
+      <hr>
+      
+      <h2>
+        {{ $t('goals') }}
+      </h2>
 
-      <h2 class="text-4xl">
+      <div class="grid grid-cols-2 gap-4 py-2 w-2/3">
+        <UICard :title="$t('goal1Title')" border-color="yellow" :date="$t('notSoon')">
+          {{ $t('goal1Desc') }}
+        </UICard>
+        <UICard :title="$t('goal2Title')" border-color="green" date="08.02.2025">
+          <a href="https://t.me/blum/app?startapp=memepadjetton_WHY_FHLAY-ref_N6jhKl4WlB" target="_blank" class="underline">
+            {{ $t('goal2Desc') }}
+          </a>
+        </UICard>
+        <UICard :title="$t('goal3Title')" border-color="green" date="10.02.2025">
+          {{ $t('goal3Desc') }}
+        </UICard>
+      </div>
+      
+      <hr>
+
+      <h2>
         {{ $t('socials') }}
       </h2>
+
       <div class="flex gap-4 text-5xl">
         <a href="https://t.me/sowhycoin" target="_blank" title="Telegram">
           <NuxtIcon name="socials/tg" class="text-purple-500 hover:text-purple-400 active:text-purple-300 transition-all duration-300" />
