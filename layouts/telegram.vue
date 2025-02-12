@@ -9,13 +9,13 @@
       }"
     >
       <div
-        v-if="tg && tg.initDataUnsafe && tg.initDataUnsafe.user"
+        v-if="initDataUnsafe && initDataUnsafe.user"
       >
         <slot />
       </div>
       <div
         class="w-full h-full flex items-center justify-center pointer-events-none"
-        v-else-if="!tg || !tg.initDataUnsafe || !tg.initDataUnsafe.user"
+        v-else-if="!initDataUnsafe || !initDataUnsafe.user"
       >
         {{ $t('telegramNotLoaded') }}
       </div>
@@ -59,14 +59,20 @@ const route = useRoute()
 
 useHead({
   title: route.meta.title,
-  meta: [{ property: 'og:title', content: route.meta.title }]
+  script: [
+    { src: 'https://telegram.org/js/telegram-web-app.js' }
+  ],
+  meta: [
+    { name: 'viewport', content: 'width=430, height=932, initial-scale=1, user-scalable=0' },
+    { property: 'og:title', content: route.meta.title }
+  ]
 })
 
-const onLoad = (tg) => {
-  if (!tg.value.initDataUnsafe.user) {
+const onLoad = (tg, initDataUnsafe) => {
+  if (!initDataUnsafe.value.user) {
     return;
   }
-  const lang = tg.value.initDataUnsafe.user.language_code;
+  const lang = initDataUnsafe.value.user.language_code;
   console.log(lang);
   switch (lang) {
     case 'ru':
@@ -78,6 +84,6 @@ const onLoad = (tg) => {
   }
 };
 
-const { tg, loaded } = useTelegram(onLoad);
+const { tg, loaded, initDataUnsafe } = useTelegram(onLoad);
 
 </script>
