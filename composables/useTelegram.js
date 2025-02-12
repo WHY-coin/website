@@ -8,6 +8,9 @@ export const useTelegram = (onLoaded) => {
   useHead({
     script: [
       { src: 'https://telegram.org/js/telegram-web-app.js?56' }
+    ],
+    meta: [
+      { name: 'viewport', content: 'width=720px, initial-scale=1, user-scalable=0' }
     ]
   });
 
