@@ -1,7 +1,7 @@
 <template>
   <div
     class="flex flex-col items-center"
-    @click="navigateTo(to)"
+    @click="navigate"
   >
     <span>
       <FontAwesome
@@ -42,10 +42,9 @@ const props = withDefaults(defineProps<{
   to: '/tgapp'
 })
 
+
 function navigate() {
   navigateTo(props.to);
-  // router.push(props.to)
-  // refreshNuxtData()
 }
 
 </script>

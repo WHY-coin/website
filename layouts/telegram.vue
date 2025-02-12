@@ -39,7 +39,7 @@
       />
     </div>
 
-    <NavigationBar
+    <UINavigationBar
       class="fixed bottom-0 left-0 right-0 transition-all duration-300"
       :class="{
         'pointer-events-none translate-y-full': !loaded,
@@ -51,8 +51,6 @@
 
 
 <script setup>
-import NavigationBar from '~/components/UI/NavigationBar.vue';
-
 
 const { setLocale } = useI18n();
 

@@ -11,7 +11,7 @@
 
 definePageMeta({
   title: '$WHY Profile',
-  layout: 'telegram'
+  layout: 'telegram',
 });
 
 
