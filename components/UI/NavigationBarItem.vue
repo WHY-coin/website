@@ -8,8 +8,8 @@
         :icon="icon"
         class="text-3xl duration-300 transition-all"
         :class="{
-          'text-purple-400': active,
-          'text-white': !active,
+          'text-purple-400 scale-95': active,
+          'text-white scale-105': !active,
         }"
       />
     </span>
@@ -17,7 +17,7 @@
       class="absolute transition-all duration-300 font-medium"
       :class="{
         'translate-y-16 text-white': !active,
-        'translate-y-8 text-purple-400': active
+        'translate-y-7 text-purple-400': active
       }"
     >
       {{ title }}

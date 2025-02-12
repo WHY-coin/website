@@ -10,7 +10,7 @@ export const useTelegram = (onLoaded) => {
       { src: 'https://telegram.org/js/telegram-web-app.js?56' }
     ],
     meta: [
-      { name: 'viewport', content: 'width=720px, initial-scale=1, user-scalable=0' }
+      { name: 'viewport', content: 'width=430, height=932, initial-scale=1, user-scalable=0' }
     ]
   });
 

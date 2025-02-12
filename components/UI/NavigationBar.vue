@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-20 flex justify-evenly items-center rounded-t-3xl backdrop-blur-md bg-white/5 py-4">
+  <div class="w-full h-20 flex justify-evenly items-center rounded-t-3xl backdrop-blur-md bg-white/5 pb-2">
     <UINavigationBarItem
       icon="house"
       :active="currentPage === '$WHY Home'"

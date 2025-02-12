@@ -1,11 +1,11 @@
 <template>
   <div
-    class="w-screen h-screen flex flex-col items-center justify-center bg-[#07080F]"
+    class="w-screen h-screen flex flex-col bg-[#07080F] text-white"
   >
     <div
       :class="{
-        'pointer-events-none': !loaded,
-        'pointer-events-auto p-4 text-center': loaded
+        'w-full h-full pointer-events-none': !loaded,
+        'w-full h-full pointer-events-auto p-4 text-center': loaded
       }"
     >
       <div
@@ -14,6 +14,7 @@
         <slot />
       </div>
       <div
+        class="w-full h-full flex items-center justify-center pointer-events-none"
         v-else-if="!tg || !tg.initDataUnsafe.user"
       >
         {{ $t('telegramNotLoaded') }}
