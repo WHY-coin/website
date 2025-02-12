@@ -49,7 +49,7 @@ export default defineNuxtConfig({
   },
   fontawesome: {
     icons: {
-      solid: ['house']
+      solid: ['house', 'user']
     }
   }
 })

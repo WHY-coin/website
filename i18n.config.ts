@@ -28,6 +28,9 @@ export default defineI18nConfig(() => ({
       whitepaperError: 'It\'s too secret. Perhaps even for ourselves.',
       whitepaperError1: 'Haha, did you think it was that simple?',
       telegramNotLoaded: 'Oops! Something went wrong! Please try again later',
+      
+      appHome: "Home",
+      appProfile: "Profile",
     },
     ru: {
       bestTokenEver: 'Лучший токен на свете',
@@ -55,6 +58,9 @@ export default defineI18nConfig(() => ({
       whitepaperError: 'Слишком секретно. Возможно, даже для нас самих.',
       whitepaperError1: 'Ха-ха, думал все так просто?',
       telegramNotLoaded: 'Упс! Кажется, что-то не так! Попробуйте позже',
+
+      appHome: "Главная",
+      appProfile: "Профиль",
     }
   }
 }))

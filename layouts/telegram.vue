@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-screen h-screen flex flex-col items-center justify-center"
+    class="w-screen h-screen flex flex-col items-center justify-center bg-[#07080F]"
   >
     <div
       :class="{
@@ -11,7 +11,7 @@
       <div
         v-if="tg && tg.initDataUnsafe.user"
       >
-        Welcome, {{ tg.initDataUnsafe.user.username }}!
+        <slot />
       </div>
       <div
         v-else-if="!tg || !tg.initDataUnsafe.user"
@@ -38,17 +38,30 @@
         class="animate-spin rounded-full"
       />
     </div>
+
+    <NavigationBar
+      class="fixed bottom-0 left-0 right-0 transition-all duration-300"
+      :class="{
+        'pointer-events-none translate-y-full': !loaded,
+        '': loaded,
+      }"
+    />
   </div>
 </template>
 
 
 <script setup>
+import NavigationBar from '~/components/UI/NavigationBar.vue';
+
 
 const { setLocale } = useI18n();
 
-definePageMeta({
-  title: '$WHY'
-});
+const route = useRoute()
+
+useHead({
+  title: route.meta.title,
+  meta: [{ property: 'og:title', content: route.meta.title }]
+})
 
 const onLoad = (tg) => {
   if (!tg.value.initDataUnsafe.user) {

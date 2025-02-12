@@ -18,7 +18,8 @@ export const useTelegram = (onLoaded) => {
       tg.value.setBackgroundColor('#04060C');
       tg.value.setHeaderColor('#04060C');
       loaded.value = true;
-      onLoaded(tg);
+      if (onLoaded)
+        onLoaded(tg);
     }
   });
 
