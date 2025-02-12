@@ -2,13 +2,13 @@
   <div class="w-full h-20 flex justify-evenly items-center rounded-t-3xl backdrop-blur-md bg-white/5 py-4">
     <UINavigationBarItem
       icon="house"
-      :active="currentPage === 'home'"
+      :active="currentPage === '$WHY Home'"
       :title="$t('appHome')"
       to="/tgapp/"
     />
     <UINavigationBarItem
       icon="user"
-      :active="currentPage === 'profile'"
+      :active="currentPage === '$WHY Profile'"
       :title="$t('appProfile')"
       to="/tgapp/profile"
     />
@@ -20,10 +20,10 @@
 
 const route = useRoute()
 
-const currentPage = ref('home')
+const currentPage = ref<string>('$WHY Home')
 
 watch(route, val => {
-  
+  currentPage.value = route.meta.title as string;
 }, { deep: true, immediate: true });
 
 </script>
