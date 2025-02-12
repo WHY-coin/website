@@ -20,6 +20,7 @@ export const useTelegram = (onLoaded) => {
       tg.value.setBottomBarColor('#04060C');
       tg.value.setBackgroundColor('#04060C');
       tg.value.setHeaderColor('#04060C');
+      tg.ready();
       loaded.value = true;
       if (onLoaded)
         onLoaded(tg);

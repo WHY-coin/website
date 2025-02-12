@@ -9,13 +9,13 @@
       }"
     >
       <div
-        v-if="tg && tg.initDataUnsafe.user"
+        v-if="tg && tg.initDataUnsafe && tg.initDataUnsafe.user"
       >
         <slot />
       </div>
       <div
         class="w-full h-full flex items-center justify-center pointer-events-none"
-        v-else-if="!tg || !tg.initDataUnsafe.user"
+        v-else-if="!tg || !tg.initDataUnsafe || !tg.initDataUnsafe.user"
       >
         {{ $t('telegramNotLoaded') }}
       </div>
@@ -67,6 +67,7 @@ const onLoad = (tg) => {
     return;
   }
   const lang = tg.value.initDataUnsafe.user.language_code;
+  console.log(lang);
   switch (lang) {
     case 'ru':
       setLocale('ru');
