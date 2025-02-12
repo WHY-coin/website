@@ -18,12 +18,12 @@
 
 <script setup lang="ts">
 
-const route = useRoute()
+const route = useRouter().currentRoute
 
 const currentPage = ref<string>('$WHY Home')
 
 watch(route, val => {
-  currentPage.value = route.meta.title as string;
+  currentPage.value = val.meta.title as string
 }, { deep: true, immediate: true });
 
 </script>

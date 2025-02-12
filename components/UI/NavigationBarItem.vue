@@ -6,7 +6,7 @@
     <span>
       <FontAwesome
         :icon="icon"
-        class="text-3xl"
+        class="text-3xl duration-300 transition-all"
         :class="{
           'text-purple-400': active,
           'text-white': !active,
