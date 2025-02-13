@@ -41,7 +41,7 @@ onMounted(() => {
 
 useHead({
   htmlAttrs: {
-    lang: 'en'
+    lang: locale
   },
   link: [
     { rel: 'icon', type: 'image/x-jpg', href: '/icon.webp' },

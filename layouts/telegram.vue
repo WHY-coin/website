@@ -56,6 +56,7 @@
 const { setLocale } = useI18n();
 
 const route = useRoute()
+const currentRoute = useRouter().currentRoute
 
 useHead({
   title: route.meta.title,
@@ -73,7 +74,6 @@ const onLoad = (tg, initDataUnsafe) => {
     return;
   }
   const lang = initDataUnsafe.value.user.language_code;
-  console.log(lang);
   switch (lang) {
     case 'ru':
       setLocale('ru');
@@ -85,5 +85,21 @@ const onLoad = (tg, initDataUnsafe) => {
 };
 
 const { tg, loaded, initDataUnsafe } = useTelegram(onLoad);
+
+
+watch(currentRoute, val => {
+  if (!initDataUnsafe.value.user) {
+    return;
+  }
+  const lang = initDataUnsafe.value.user.language_code;
+  switch (lang) {
+    case 'ru':
+      setLocale('ru');
+      break;
+    default:
+      setLocale('en');
+      break;
+  }
+});
 
 </script>

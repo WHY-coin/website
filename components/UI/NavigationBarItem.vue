@@ -29,6 +29,7 @@
 <script setup lang="ts">
 
 const router = useRouter()
+// const { locale, setLocale } = useI18n()
 
 const props = withDefaults(defineProps<{
   active?: boolean,
@@ -44,7 +45,13 @@ const props = withDefaults(defineProps<{
 
 
 function navigate() {
+  // console.log(locale);
   navigateTo(props.to);
+  // setLocale(locale.value);
+  // if (locale.value as string !== 'en') {
+  //   navigateTo(props.to + '/' + locale.value);
+  // } else {
+  // }
 }
 
 </script>

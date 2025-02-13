@@ -28,6 +28,8 @@ export default defineI18nConfig(() => ({
       whitepaperError: 'It\'s too secret. Perhaps even for ourselves.',
       whitepaperError1: 'Haha, did you think it was that simple?',
       telegramNotLoaded: 'Oops! Something went wrong! Please try again later',
+
+      actualCourse: 'Today 1 $WHY = 1 $WHY',
       
       appHome: "Home",
       appProfile: "Profile",
@@ -58,6 +60,8 @@ export default defineI18nConfig(() => ({
       whitepaperError: 'Слишком секретно. Возможно, даже для нас самих.',
       whitepaperError1: 'Ха-ха, думал все так просто?',
       telegramNotLoaded: 'Упс! Кажется, что-то не так! Попробуйте позже',
+      
+      actualCourse: 'Сегодня 1 $WHY = 1 $WHY',
 
       appHome: "Главная",
       appProfile: "Профиль",
