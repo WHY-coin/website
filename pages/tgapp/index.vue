@@ -30,6 +30,9 @@
 import VueApexCharts from 'vue3-apexcharts';
 
 
+const { t } = useI18n();
+
+
 definePageMeta({
   title: '$WHY Home',
   layout: 'telegram',
@@ -105,14 +108,14 @@ const chartOptions = ref({
     },
     theme: 'dark',
     y: {
-      formatter: (val) => `$${val}`,
+      formatter: (val) => `${val} $WHY`,
     },
   },
 });
 
 const series = ref([
   {
-    name: '$WHY Price',
+    name: t('whyPrice'),
     data: values,
   },
 ]);

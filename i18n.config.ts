@@ -33,6 +33,7 @@ export default defineI18nConfig(() => ({
       
       appHome: "Home",
       appProfile: "Profile",
+      whyPrice: '$WHY Price',
     },
     ru: {
       bestTokenEver: 'Лучший токен на свете',
@@ -65,6 +66,7 @@ export default defineI18nConfig(() => ({
 
       appHome: "Главная",
       appProfile: "Профиль",
+      whyPrice: 'Цена $WHY',
     }
   }
 }))
