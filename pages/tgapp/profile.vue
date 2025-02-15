@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-screen h-screen flex flex-col items-center justify-center"
+    class="w-full h-full flex flex-col items-center justify-center"
     v-if="initDataUnsafe && initDataUnsafe.user"
   >
     Profile of {{ initDataUnsafe.user.username }}!
