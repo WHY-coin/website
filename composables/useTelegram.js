@@ -1,8 +1,10 @@
 import { onMounted, ref } from "vue";
 
+
 const loaded = ref(false);
 const tg = ref(undefined);
 const initDataUnsafe = ref(undefined);
+
 
 const urlParseHashParams = (hash) => {
   if (!hash || hash === '') {
@@ -37,10 +39,24 @@ const urlParseHashParams = (hash) => {
 
 export const useTelegram = (onLoaded) => {
 
+  const tg_info = useCookie(
+    'tg_info',
+    {
+      default: () => {},
+      watch: true
+    }
+  );
+
   onMounted(() => {
     if (window.Telegram.WebApp && !initDataUnsafe.value) {
       window.Telegram.WebApp.ready();
       initDataUnsafe.value = urlParseHashParams(location.hash);
+      const keysLength = Object.keys(initDataUnsafe.value).length
+      if (keysLength > 0 && initDataUnsafe.value && initDataUnsafe.value.user) {
+        tg_info.value = initDataUnsafe.value;
+      } else if (Object.keys(tg_info.value).length > 0) {
+        initDataUnsafe.value = tg_info.value;
+      }
       tg.value = window.Telegram.WebApp;
       tg.value.ready();
       tg.value.setBottomBarColor('#04060C');

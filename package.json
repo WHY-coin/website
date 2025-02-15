@@ -18,6 +18,7 @@
     "@vesp/nuxt-fontawesome": "^1.2.1",
     "apexcharts": "^4.4.0",
     "axios": "^1.7.9",
+    "h3": "^1.15.0",
     "lenis": "^1.1.20",
     "nuxt": "^3.15.4",
     "nuxt-icons": "^3.2.1",
