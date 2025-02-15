@@ -43,7 +43,8 @@ export const useTelegram = (onLoaded) => {
     'tg_info',
     {
       default: () => {},
-      watch: true
+      watch: true,
+      maxAge: 60 * 60 * 24
     }
   );
 
