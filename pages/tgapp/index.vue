@@ -15,7 +15,6 @@
 
     <ClientOnly>
       <VueApexCharts
-        width="420"
         height="512"
         :options="chartOptions"
         :series="series"
@@ -59,6 +58,7 @@ const generateFakeData = () => {
 const { dates, values, colors } = generateFakeData();
 
 const chartOptions = ref({
+  width: window.innerWidth,
   chart: {
     id: 'why-currency',
     type: 'area',
