@@ -28,6 +28,7 @@ const urlParseHashParams = (hash) => {
     return acc;
   }, {});
 
+  console.log(data);
   if (data.tgWebAppData && typeof data.tgWebAppData === 'string' && data.tgWebAppData.includes('=')) {
     const [key, value] = data.tgWebAppData.split('=', 2);
     data[key] = JSON.parse(value);
