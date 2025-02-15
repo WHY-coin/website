@@ -28,9 +28,13 @@ const urlParseHashParams = (hash) => {
     return acc;
   }, {});
 
-  if (data.tgWebAppData) {
+  if (data.tgWebAppData && typeof data.tgWebAppData === 'string' && data.tgWebAppData.includes('=')) {
     const [key, value] = data.tgWebAppData.split('=', 2);
     data[key] = JSON.parse(value);
+  }
+
+  if (data.user && typeof data.user === 'string') {
+    data.user = JSON.parse(data.user);
   }
 
   return data;
