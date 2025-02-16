@@ -30,6 +30,7 @@ export default defineI18nConfig(() => ({
       telegramNotLoaded: 'Oops! Something went wrong! Please try again later',
 
       actualCourse: 'Today 1 $WHY = 1 $WHY',
+      actualCourseTomorrow: 'But who knows what will happen tomorrow?',
       
       appHome: "Home",
       appProfile: "Profile",
@@ -63,6 +64,7 @@ export default defineI18nConfig(() => ({
       telegramNotLoaded: 'Упс! Кажется, что-то не так! Попробуйте позже',
       
       actualCourse: 'Сегодня 1 $WHY = 1 $WHY',
+      actualCourseTomorrow: 'Но кто знает, что будет завтра?',
 
       appHome: "Главная",
       appProfile: "Профиль",

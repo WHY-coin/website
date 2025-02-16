@@ -7,19 +7,19 @@ const initDataUnsafe = ref(undefined);
 
 
 const urlParseHashParams = (hash) => {
-  if (!hash || hash === '') {
+  if (!hash || hash === '')
     return {};
-  }
 
-  const data = hash.slice(1).split('&').reduce((acc, param) => {
+  hash = hash.replace(/^#+/ig, '');
+
+  const data = hash.split('&').reduce((acc, param) => {
     let [key, ...valueParts] = param.split('=');
     let value = valueParts.join('=');
     if (value) {
       try {
         value = decodeURIComponent(value);
-        if (value.startsWith('{') || value.startsWith('[')) {
+        if (value.startsWith('{') || value.startsWith('['))
           value = JSON.parse(value);
-        }
       } catch (e) {
         console.warn(`Error parsing key: ${key}, value: ${value}`, e);
       }
@@ -33,9 +33,8 @@ const urlParseHashParams = (hash) => {
     data[key] = JSON.parse(value);
   }
 
-  if (data.user && typeof data.user === 'string') {
+  if (data.user && typeof data.user === 'string')
     data.user = JSON.parse(data.user);
-  }
 
   return data;
 }
@@ -59,10 +58,16 @@ export const useTelegram = (onLoaded) => {
       const keysLength = Object.keys(initDataUnsafe.value).length
       if (keysLength > 0 && initDataUnsafe.value && initDataUnsafe.value.user) {
         tg_info.value = initDataUnsafe.value;
-      } else if (Object.keys(tg_info.value).length > 0) {
+      } else if (tg_info.value && Object.keys(tg_info.value).length > 0) {
         initDataUnsafe.value = tg_info.value;
       }
       tg.value = window.Telegram.WebApp;
+
+      if (tg.value && tg.value.initDataUnsafe && tg.value.initDataUnsafe.user) {
+        initDataUnsafe.value = tg.value.initDataUnsafe
+      }
+      console.log(initDataUnsafe.value);
+
       tg.value.ready();
       tg.value.setBottomBarColor('#04060C');
       tg.value.setBackgroundColor('#04060C');

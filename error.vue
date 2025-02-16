@@ -5,7 +5,7 @@
       <h1 class="text-5xl lg:text-7xl xl:text-9xl scale-150">
         {{ error?.statusCode }}
       </h1>
-      <span class="absolute translate-y-16 lg:translate-y-20 xl:translate-y-28 text-xl lg:text-2xl xl:text-3xl">
+      <span class="text-center absolute translate-y-16 lg:translate-y-20 xl:translate-y-28 text-xl lg:text-2xl xl:text-3xl">
         {{ $t('err404') }}
       </span>
       <NuxtLink class="absolute translate-y-32 lg:translate-y-36 xl:translate-y-44" to="/">
@@ -56,8 +56,8 @@ useHead({
 
 
 useSeoMeta({
-  title: t('err404Title'),
-  ogTitle: t('err404Title'),
+  title: `${props.error?.cause}`,
+  ogTitle: `${props.error?.cause}`,
   description: t('err404'),
   ogDescription: t('err404'),
   ogImage: '/why.jpg',

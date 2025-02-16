@@ -5,13 +5,17 @@
   >
     <!-- Welcome, {{ initDataUnsafe.user.username }}! -->
 
-    <h1 class="text-left">
+    <h1 class="text-left font-medium">
       {{ $t('appHome') }}
     </h1>
 
-    <h4 class="text-left">
+    <span class="text-left">
       {{ $t('actualCourse') }}
-    </h4>
+    </span>
+
+    <span class="text-left text-sm italic opacity-75">
+      {{ $t('actualCourseTomorrow') }}
+    </span>
 
     <ClientOnly>
       <VueApexCharts
