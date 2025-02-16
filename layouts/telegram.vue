@@ -28,10 +28,10 @@
       }"
     >
       <NuxtImg
-        :placeholder="[190, 190, 75, 0]"
+        :placeholder="[160, 160, 60, 0]"
         width="256"
         height="256"
-        quality="75"
+        quality="60"
         loading="lazy"
         decoding="async"
         src="/icon.webp"
