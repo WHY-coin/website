@@ -72,6 +72,12 @@
         <UICard :title="$t('goal2Title')" border-color="yellow" :date="$t('notSoon')">
           {{ $t('goal2Desc') }}
         </UICard>
+        <UICard :title="$t('goal5Title')" border-color="yellow" :date="$t('notSoon')">
+          {{ $t('goal5Desc') }}
+        </UICard>
+        <UICard :title="$t('goal6Title')" border-color="yellow" :date="$t('notSoon')">
+          {{ $t('goal6Desc') }}
+        </UICard>
       </div>
       
       <hr>
