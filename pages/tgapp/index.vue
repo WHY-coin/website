@@ -30,7 +30,7 @@
     </span>
 
     <ClientOnly>
-      <VueApexCharts
+      <apexchart
         height="512"
         :options="chartOptions"
         :series="series"
@@ -42,9 +42,6 @@
 
 
 <script setup>
-import VueApexCharts from 'vue3-apexcharts';
-
-
 const { t } = useI18n();
 
 

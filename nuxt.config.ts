@@ -22,10 +22,6 @@ export default defineNuxtConfig({
     "@nuxtjs/prismic"
   ],
 
-  plugins: [
-    { src: '~/plugins/chart.js', mode: 'client' },
-  ],
-
   tailwindcss: {
     exposeConfig: true,
     config: {
