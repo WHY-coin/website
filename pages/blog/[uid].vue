@@ -15,6 +15,8 @@ const ogImage = computed(() => {
     return img as string !== '' ? prismic.asImageSrc(img) : '/why.jpg'
 })
 
+const pageDate = new Date(Date.parse(page.value?.last_publication_date!))
+
 useSeoMeta({
   title: `${page.value?.data.meta_title} | $WHY`,
   ogTitle: `${page.value?.data.meta_title} | $WHY`,
@@ -51,7 +53,7 @@ onMounted(() => loaded.value = true)
         }"
         :title="page?.data.meta_title"
         border-color="gray"
-        :date="page?.last_publication_date"
+        :date="pageDate.toLocaleDateString()"
         :source-title="page?.data.source.text"
         :source="(page?.data.source as FilledLinkToWebField).url"
       >
