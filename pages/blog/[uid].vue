@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { components } from "~/slices";
+import type { FilledLinkToWebField } from "@prismicio/client";
 
 const prismic = usePrismic();
 const route = useRoute();
@@ -52,7 +53,7 @@ onMounted(() => loaded.value = true)
         border-color="gray"
         :date="page?.last_publication_date"
         :source-title="page?.data.source.text"
-        :source="page?.data.source.url"
+        :source="(page?.data.source as FilledLinkToWebField).url"
       >
         <SliceZone
           wrapper="main"

@@ -46,7 +46,7 @@
 
 
 <script setup lang="ts">
-import type * as prismic from "@prismicio/client";
+import * as prismic from "@prismicio/client";
 
 withDefaults(defineProps<{
   title?: string | prismic.KeyTextField,
