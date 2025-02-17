@@ -4,21 +4,22 @@
   "type": "module",
   "license": "MIT",
   "scripts": {
-    "build": "nuxt build --modern=server",
-    "dev": "nuxt dev --modern=server",
-    "start": "nuxt start --host 127.0.0.1 --modern=server",
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "start": "nuxt start --host 127.0.0.1",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "slicemachine": "start-slicemachine"
   },
   "dependencies": {
     "@nuxt/image": "^1.9.0",
     "@nuxtjs/i18n": "^8.0.0",
     "@nuxtjs/tailwindcss": "6.13.1",
+    "@storyblok/nuxt": "^6.0.4",
     "@vesp/nuxt-fontawesome": "^1.2.1",
     "apexcharts": "^4.4.0",
     "axios": "^1.7.9",
-    "h3": "^1.15.0",
     "lenis": "^1.1.20",
     "nuxt": "^3.15.4",
     "nuxt-icons": "^3.2.1",
@@ -30,6 +31,9 @@
   "devDependencies": {
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
     "@fortawesome/free-regular-svg-icons": "^6.7.2",
-    "@fortawesome/free-solid-svg-icons": "^6.7.2"
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@nuxtjs/prismic": "^4.0.0",
+    "@slicemachine/adapter-nuxt": "^0.3.66",
+    "slice-machine-ui": "^2.12.3"
   }
 }

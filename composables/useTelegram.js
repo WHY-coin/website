@@ -66,7 +66,7 @@ export const useTelegram = (onLoaded) => {
       if (tg.value && tg.value.initDataUnsafe && tg.value.initDataUnsafe.user) {
         initDataUnsafe.value = tg.value.initDataUnsafe
       }
-      console.log(initDataUnsafe.value);
+      // console.log(initDataUnsafe.value);
 
       tg.value.ready();
       tg.value.setBottomBarColor('#04060C');

@@ -1,0 +1,20 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"content": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Consectetur id magna duis cupidatat. Enim magna esse eu quis incididunt excepteur dolore."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

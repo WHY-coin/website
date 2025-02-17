@@ -33,12 +33,15 @@ export default defineI18nConfig(() => ({
       whitepaperError1: 'Haha, did you think it was that simple?',
       telegramNotLoaded: 'Oops! Something went wrong! Please try again later',
 
-      actualCourse: 'Today 1 $WHY = 1 $WHY',
+      actualCourse: (ctx: any) => `Today 1 $WHY = ${ctx.named('why')} $WHY`,
       actualCourseTomorrow: 'But who knows what will happen tomorrow?',
+      actualCourseTomorrowElse: 'And it\'s just crazy.',
+      actualCourseTomorrowElseIf: 'What\'s happening??',
       
       appHome: "Home",
       appProfile: "Profile",
-      whyPrice: '$WHY Price',
+      whyPrice: '1 $WHY Price',
+      postSource: 'Source',
     },
     ru: {
       bestTokenEver: 'Лучший токен на свете',
@@ -71,12 +74,15 @@ export default defineI18nConfig(() => ({
       whitepaperError1: 'Ха-ха, думал все так просто?',
       telegramNotLoaded: 'Упс! Кажется, что-то не так! Попробуйте позже',
       
-      actualCourse: 'Сегодня 1 $WHY = 1 $WHY',
+      actualCourse: (ctx: any) => `Сегодня 1 $WHY = ${ctx.named('why')} $WHY`,
       actualCourseTomorrow: 'Но кто знает, что будет завтра?',
+      actualCourseTomorrowElse: 'И это просто жесть',
+      actualCourseTomorrowElseIf: 'Что происходит??',
 
       appHome: "Главная",
       appProfile: "Профиль",
-      whyPrice: 'Цена $WHY',
+      whyPrice: 'Цена за 1 $WHY',
+      postSource: 'Источник',
     }
   }
 }))

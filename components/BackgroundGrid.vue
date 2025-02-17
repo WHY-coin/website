@@ -7,7 +7,6 @@
 
 <script setup>
 const backgroundGrid = ref(null);
-const lastPositions = [];
 const vertexShaderSource = `
   attribute vec2 a_position;
   varying vec2 v_position;
@@ -129,8 +128,11 @@ onMounted(() => {
     return;
   }
 
-  // Отслеживание движения мыши
   function render() {
+    if (!window) {
+      requestAnimationFrame(render);
+      return;
+    }
     backgroundGrid.value.width = window.innerWidth;
     backgroundGrid.value.height = window.innerHeight;
     gl.viewport(0, 0, window.innerWidth, window.innerHeight); 

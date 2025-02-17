@@ -1,7 +1,7 @@
 <template>
   <div class="w-full min-h-screen overflow-x-hidden bg-[#07080F] text-white">
     <BackgroundGrid />
-    <slot/>
+    <slot />
   </div>
 </template>
 

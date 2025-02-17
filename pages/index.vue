@@ -45,7 +45,7 @@
     </div>
 
     <!-- main content -->
-    <div class="flex flex-col items-center p-6 gap-2 rounded-t-3xl bg-[#04060C80] backdrop-blur-sm border-[1px] border-white/15 w-full min-h-screen overflow-x-hidden z-40">
+    <div class="flex flex-col items-center p-6 gap-2 rounded-3xl bg-[#04060C80] backdrop-blur-sm border-[1px] border-purple-500/15 w-full min-h-screen overflow-x-hidden z-40 mb-10">
       <h1>
         $WHY COIN
       </h1>
@@ -92,6 +92,12 @@
         </a>
         <a href="https://x.com/sowhycoin" target="_blank" title="X">
           <NuxtIcon name="socials/x" class="text-purple-500 hover:text-purple-400 active:text-purple-300 transition-all duration-300" />
+        </a>
+        <a href="https://tiktok.com/@sowhycoin" target="_blank" title="TikTok">
+          <NuxtIcon name="socials/tiktok" class="text-purple-500 hover:text-purple-400 active:text-purple-300 transition-all duration-300" />
+        </a>
+        <a href="https://www.youtube.com/@sowhycoin" target="_blank" title="YouTube">
+          <NuxtIcon name="socials/youtube" class="text-purple-500 hover:text-purple-400 active:text-purple-300 transition-all duration-300" />
         </a>
         <a href="https://twitblit.ru/tb/sowhycoin" target="_blank" title="Twitblit">
           <NuxtIcon name="socials/twitblit" class="text-purple-500 hover:text-purple-400 active:text-purple-300 transition-all duration-300" />

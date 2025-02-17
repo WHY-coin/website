@@ -1,11 +1,11 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
-
+import { repositoryName } from "./slicemachine.config.json";
 const year = 60 * 60 * 24 * 365;
 const hour = 60 * 60;
 
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
+
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxt/image',
@@ -15,18 +15,42 @@ export default defineNuxtConfig({
     [
       'yandex-metrika-module-nuxt3',
       {
-        id: '99845495',
+        id: import.meta.env.YM_ID,
         webvisor: true,
       }
-    ]
+    ],
+    "@nuxtjs/prismic"
   ],
+
   plugins: [
     { src: '~/plugins/chart.js', mode: 'client' },
   ],
+
   tailwindcss: {
     exposeConfig: true,
+    config: {
+      "theme": { "extend": {} },
+      "content": {
+        "files": [
+          "srcDir/components/**/*.{vue,js,jsx,mjs,ts,tsx}",
+          "srcDir/layouts/**/*.{vue,js,jsx,mjs,ts,tsx}",
+          "srcDir/pages/**/*.{vue,js,jsx,mjs,ts,tsx}",
+          "srcDir/plugins/**/*.{js,ts,mjs}",
+          "srcDir/slices/**/*.{js,ts,mjs,vue}",
+          "srcDir/composables/**/*.{js,ts,mjs}",
+          "srcDir/utils/**/*.{js,ts,mjs}",
+          "srcDir/{A,a}pp.{vue,js,jsx,mjs,ts,tsx}",
+          "srcDir/{E,e}rror.{vue,js,jsx,mjs,ts,tsx}",
+          "srcDir/app.config.{js,ts,mjs}",
+          "srcDir/app/spa-loading-template.html"
+        ]
+      },
+      "plugins": []
+    }    
   },
+
   ssr: true,
+
   nitro: {
     compressPublicAssets: true,
     routeRules: {
@@ -42,6 +66,7 @@ export default defineNuxtConfig({
       },
     }
   },
+
   i18n: {
     vueI18n: './i18n.config.ts',
     locales: [
@@ -50,9 +75,22 @@ export default defineNuxtConfig({
     ],
     defaultLocale: 'en',
   },
+
   fontawesome: {
     icons: {
       solid: ['house', 'user']
+    }
+  },
+
+  prismic: {
+    endpoint: repositoryName,
+    clientConfig: {
+      routes: [
+        {
+          type: 'testpost',
+          path: '/blog/:uid'
+        }
+      ]
     }
   }
 })

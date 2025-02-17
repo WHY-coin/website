@@ -9,12 +9,24 @@
       {{ $t('appHome') }}
     </h1>
 
-    <span class="text-left">
-      {{ $t('actualCourse') }}
+    <span class="text-left" v-if="whyCurrencyCurrent === 1">
+      {{ $t('actualCourse', {why: whyCurrencyCurrent}) }}
     </span>
 
-    <span class="text-left text-sm italic opacity-75">
+    <span class="text-left" v-else>
+      {{ $t('actualCourse', {why: whyCurrencyCurrent.toFixed(2)}) }}
+    </span>
+
+    <span class="text-left text-sm italic opacity-75" v-if="whyCurrencyCurrent === 1">
       {{ $t('actualCourseTomorrow') }}
+    </span>
+
+    <span class="text-left text-sm italic opacity-75" v-else-if="whyCurrencyCurrent > 50">
+      {{ $t('actualCourseTomorrowElseIf') }}
+    </span>
+
+    <span class="text-left text-sm italic opacity-75" v-else>
+      {{ $t('actualCourseTomorrowElse') }}
     </span>
 
     <ClientOnly>
@@ -42,19 +54,31 @@ definePageMeta({
 });
 
 
+const whyCurrencyCurrent = ref(1);
+
+
 const generateFakeData = () => {
   const dates = [];
   const values = [];
   const colors = [];
-  let price = 1;
-  for (let i = -1; i < 4; i++) {
+  whyCurrencyCurrent.value = 1;
+  let x = (p) => 1;
+  if (Math.random() >= 0.96) {
+    x = (p) => {
+      return p + (Math.random() * 45.0 + 2.0) - (Math.random() * 45.0 + 2.0);
+    }
+  } else if (Math.random() > 0.75) {
+    x = (p) => {
+      return p + Math.pow(whyCurrencyCurrent.value * Math.random(), Math.random() + 0.25) * (Math.random() - 0.5);
+    }
+  }
+  for (let i = -1; i < 5; i++) {
     let d = new Date();
-    d.setMinutes(d.getMinutes() - (3 - i) * 60);
+    d.setMinutes(d.getMinutes() - (4 - i) * 60);
     dates.push(d.toLocaleTimeString());
-    price = 1;
-    values.push(Math.abs(price.toFixed(2)));
+    whyCurrencyCurrent.value = x(whyCurrencyCurrent.value);
+    values.push(Math.abs(whyCurrencyCurrent.value.toFixed(2)));
     colors.push('#C084FC')
-    // colors.push('rgb(192, 132, 252, 1)')
   }
   return { dates, values, colors };
 };
