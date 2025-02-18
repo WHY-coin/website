@@ -78,7 +78,7 @@ export default defineNuxtConfig({
       contentSecurityPolicy: {
         'base-uri': ["'none'"],
         'default-src' : ["'none'"],
-        'connect-src': ["'self'", "https://mc.yandex.com", "https://mc.yandex.ru"],
+        'connect-src': ["'self'", "https://mc.yandex.com", "https://mc.yandex.ru", "https://ymetrica1.com"],
         'font-src': ["'self'", "https://fonts.googleapis.com", "https://fonts.gstatic.com"],
         'form-action': ["'self'"],
         'frame-ancestors': ["'self'"],
