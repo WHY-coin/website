@@ -11,6 +11,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     'nuxt-icons',
     '@nuxtjs/i18n',
+    'nuxt-security',
     '@vesp/nuxt-fontawesome',
     [
       'yandex-metrika-module-nuxt3',
@@ -70,6 +71,29 @@ export default defineNuxtConfig({
       { code: 'ru', language: 'ru-RU' }
     ],
     defaultLocale: 'en',
+  },
+
+  security: {
+    headers: {
+      contentSecurityPolicy: {
+        'base-uri': ["'none'"],
+        'default-src' : ["'none'"],
+        'connect-src': ["'self'"],
+        'font-src': ["'self'", "https://fonts.googleapis.com", "https://fonts.gstatic.com"],
+        'form-action': ["'self'"],
+        'frame-ancestors': ["'self'"],
+        'frame-src': ["'self'", "https://why-coin-website.prismic.io/"],
+        'img-src': ["'self'"],
+        'manifest-src': ["'self'"],
+        'media-src': ["'self'"],
+        'object-src': ["'none'"],
+        'script-src-attr': ["'unsafe-inline'"],
+        'style-src': ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com", "https://fonts.gstatic.com"],
+        'script-src': ["'self'", "'strict-dynamic'", "'nonce-{{nonce}}'"],
+        'upgrade-insecure-requests': true,
+        'worker-src': ["'self'"],
+      }
+    },
   },
 
   fontawesome: {

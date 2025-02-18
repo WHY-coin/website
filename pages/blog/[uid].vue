@@ -45,24 +45,26 @@ onMounted(() => loaded.value = true)
         'w-full h-full pointer-events-auto p-4 text-center': loaded
       }"
     >
-      <UICard
-        class="transition duration-300 backdrop-blur-sm"
-        :class="{
-          'max-h-0 opacity-0': !loaded,
-          'max-h-96': loaded
-        }"
-        :title="page?.data.meta_title"
-        border-color="gray"
-        :date="pageDate.toLocaleDateString()"
-        :source-title="page?.data.source.text"
-        :source="(page?.data.source as FilledLinkToWebField).url"
-      >
-        <SliceZone
-          wrapper="main"
-          :slices="page?.data.slices ?? []"
-          :components="components"
-        />
-      </UICard>
+      <ClientOnly>
+        <UICard
+          class="transition duration-300 backdrop-blur-sm"
+          :class="{
+            'max-h-0 opacity-0': !loaded,
+            'max-h-96': loaded
+          }"
+          :title="page?.data.meta_title"
+          border-color="gray"
+          :date="pageDate.toLocaleDateString()"
+          :source-title="page?.data.source.text"
+          :source="(page?.data.source as FilledLinkToWebField).url"
+        >
+          <SliceZone
+            wrapper="main"
+            :slices="page?.data.slices ?? []"
+            :components="components"
+          />
+        </UICard>
+      </ClientOnly>
     </div>
     <AppLoader v-model="loaded" />
   </div>
