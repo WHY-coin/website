@@ -1,6 +1,9 @@
 User-Agent: *
 Allow: /
+Allow: /blog
+Allow: /blog/*
 Disallow: /api/*
 Disallow: /whitepaper
 Disallow: /tgapp/*
 Disallow: /tgapp
+Disallow: /slice-simulator

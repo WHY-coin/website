@@ -3,8 +3,6 @@
     class="w-full h-full flex flex-col p-2"
     v-if="initDataUnsafe && initDataUnsafe.user"
   >
-    <!-- Welcome, {{ initDataUnsafe.user.username }}! -->
-
     <h1 class="text-left font-medium">
       {{ $t('appHome') }}
     </h1>
@@ -116,18 +114,13 @@ const chartOptions = ref({
   },
   xaxis: {
     categories: dates,
-    // axisTicks: {
-    //   color: 
-    // }
   },
   yaxis: {
-    // show: false
     labels: {
       formatter: (val) => `${val}`,
     },
   },
   tooltip: {
-    // enabled: false,
     style: {
       fontSize: '14px'
     },
