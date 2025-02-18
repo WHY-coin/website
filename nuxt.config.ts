@@ -82,7 +82,7 @@ export default defineNuxtConfig({
         'font-src': ["'self'", "https://fonts.googleapis.com", "https://fonts.gstatic.com"],
         'form-action': ["'self'"],
         'frame-ancestors': ["'self'"],
-        'frame-src': ["'self'", "https://why-coin-website.prismic.io/"],
+        'frame-src': ["'self'", "https://why-coin-website.prismic.io/", "https://mc.yandex.com", "https://mc.yandex.ru"],
         'img-src': ["'self'", "https://mc.yandex.com", "https://mc.yandex.ru"],
         'manifest-src': ["'self'"],
         'media-src': ["'self'"],
