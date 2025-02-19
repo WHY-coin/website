@@ -46,12 +46,12 @@ useHead({
     { src: 'https://telegram.org/js/telegram-web-app.js' }
   ],
   meta: [
-    { name: 'viewport', content: 'width=430, height=932, initial-scale=1, user-scalable=0' },
+    { name: 'viewport', content: 'width=device-width, initial-scale=1, user-scalable=no' },
     { property: 'og:title', content: route.meta.title }
   ]
 })
 
-const onLoad = (tg, initDataUnsafe) => {
+const onLoad = async (tg, initDataUnsafe) => {
   if (!initDataUnsafe.value.user) {
     return;
   }
@@ -64,9 +64,12 @@ const onLoad = (tg, initDataUnsafe) => {
       setLocale('en');
       break;
   }
+
+  await api.auth(initDataUnsafe.value);
 };
 
 const { tg, loaded, initDataUnsafe } = useTelegram(onLoad);
+const api = useApi();
 
 
 watch(currentRoute, val => {

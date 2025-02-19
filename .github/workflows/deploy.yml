@@ -26,4 +26,5 @@ jobs:
           sleep 5
           sshpass -p ${{ secrets.MACHINE_PASSWORD }} ssh -o StrictHostKeyChecking=no ${{ secrets.MACHINE_USER }}@${{ secrets.MACHINE_HOST }} "cd website && echo \"HOST=127.0.0.1\" > .env"
           sshpass -p ${{ secrets.MACHINE_PASSWORD }} ssh -o StrictHostKeyChecking=no ${{ secrets.MACHINE_USER }}@${{ secrets.MACHINE_HOST }} "cd website && echo \"YM_ID=${{ secrets.YM_ID }}\" > .env"
+          sshpass -p ${{ secrets.MACHINE_PASSWORD }} ssh -o StrictHostKeyChecking=no ${{ secrets.MACHINE_USER }}@${{ secrets.MACHINE_HOST }} "cd website && echo \"API_URL=https://sowhycoin.ru/api\" > .env"
           sshpass -p ${{ secrets.MACHINE_PASSWORD }} ssh -o StrictHostKeyChecking=no ${{ secrets.MACHINE_USER }}@${{ secrets.MACHINE_HOST }} "systemctl restart why_website"

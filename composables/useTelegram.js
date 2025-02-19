@@ -50,31 +50,46 @@ export const useTelegram = (onLoaded) => {
       maxAge: 60 * 60 * 24
     }
   );
+  const tg_info_initData = useCookie(
+    'tg_info_initData',
+    {
+      default: () => {},
+      watch: true,
+      maxAge: 60 * 60 * 24
+    }
+  );
 
-  onMounted(() => {
+  onMounted(async () => {
     if (window.Telegram.WebApp && !initDataUnsafe.value) {
-      window.Telegram.WebApp.ready();
+      tg.value = window.Telegram.WebApp;
+      tg.value.ready();
+
       initDataUnsafe.value = urlParseHashParams(location.hash);
       const keysLength = Object.keys(initDataUnsafe.value).length
+
+      // Load from location.hash and save tg_info_initData cookie
       if (keysLength > 0 && initDataUnsafe.value && initDataUnsafe.value.user) {
         tg_info.value = initDataUnsafe.value;
+        tg_info_initData.value = location.hash.slice(1);
+      // Load from cache
       } else if (tg_info.value && Object.keys(tg_info.value).length > 0) {
         initDataUnsafe.value = tg_info.value;
       }
-      tg.value = window.Telegram.WebApp;
 
+      // Load from Telegram.WebApp.initData
       if (tg.value && tg.value.initDataUnsafe && tg.value.initDataUnsafe.user) {
-        initDataUnsafe.value = tg.value.initDataUnsafe
+        initDataUnsafe.value = tg.value.initDataUnsafe;
+        tg_info_initData.value = tg.value.initData;
       }
+      initDataUnsafe.value.initData = tg_info_initData.value;
       // console.log(initDataUnsafe.value);
 
-      tg.value.ready();
       tg.value.setBottomBarColor('#04060C');
       tg.value.setBackgroundColor('#04060C');
       tg.value.setHeaderColor('#04060C');
       loaded.value = true;
       if (onLoaded)
-        onLoaded(tg, initDataUnsafe);
+        await onLoaded(tg, initDataUnsafe);
     }
   });
 

@@ -78,7 +78,7 @@ export default defineNuxtConfig({
       contentSecurityPolicy: {
         'base-uri': ["'none'"],
         'default-src' : ["'none'"],
-        'connect-src': ["'self'", "https://mc.yandex.com", "https://mc.yandex.ru", "https://ymetrica1.com"],
+        'connect-src': ["'self'", "https://mc.yandex.com", "https://mc.yandex.ru", "https://ymetrica1.com", "http://localhost:5000"],
         'font-src': ["'self'", "https://fonts.googleapis.com", "https://fonts.gstatic.com"],
         'form-action': ["'self'"],
         'frame-ancestors': ["'self'"],
@@ -111,6 +111,12 @@ export default defineNuxtConfig({
           path: '/blog/:uid'
         }
       ]
+    }
+  },
+
+  runtimeConfig: {
+    public: {
+      baseApiURL: import.meta.env.API_URL
     }
   }
 })

@@ -1,9 +1,14 @@
 <template>
   <div
-    class="w-full h-full flex flex-col items-center justify-center"
+    class="w-full h-full flex flex-col justify-center"
     v-if="initDataUnsafe && initDataUnsafe.user"
   >
-    Profile of {{ initDataUnsafe.user.username }}!
+    <h1>
+      {{ initDataUnsafe.user.username }}
+    </h1>
+    <span>
+      Your score is: {{ api.score }}
+    </span>
   </div>
 </template>
 
@@ -17,5 +22,6 @@ definePageMeta({
 
 
 const { tg, loaded, initDataUnsafe } = useTelegram();
+const api = reactive(useApi());
 
 </script>
