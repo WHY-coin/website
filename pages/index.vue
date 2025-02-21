@@ -99,9 +99,9 @@
         <a href="https://www.youtube.com/@sowhycoin" target="_blank" title="YouTube">
           <NuxtIcon name="socials/youtube" class="text-purple-500 hover:text-purple-400 active:text-purple-300 transition-all duration-300" />
         </a>
-        <a href="https://twitblit.ru/tb/sowhycoin" target="_blank" title="Twitblit">
+        <!-- <a href="https://twitblit.ru/tb/sowhycoin" target="_blank" title="Twitblit">
           <NuxtIcon name="socials/twitblit" class="text-purple-500 hover:text-purple-400 active:text-purple-300 transition-all duration-300" />
-        </a>
+        </a> -->
       </div>
     </div>
   </div>
